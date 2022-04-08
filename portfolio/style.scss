@@ -1,15 +1,15 @@
 @font-face {
   font-family: "Merriweather", serif;
-  src: url("assets/fonts/Merriweather/Merriweather-Bold.ttf");
+  src: url("./assets/fonts/Merriweather-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inter", sans-serif;
-  src: url("assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf");
+  src: url("./assets/fonts/Inter-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Inter", sans-serif;
-  src: url("assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf");
+  src: url("./assets/fonts/Inter-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 
@@ -25,12 +25,17 @@ $background-color-dark: #000000;
 $color-gold: #bdae82;
 $color-white: #ffffff;
 $color-dark: #1c1c1c;
-$font-family-title: Merriweather;
-$font-family-text: Inter;
+$font-family-title: "Merriweather";
+$font-family-text: "Inter";
 $font-h1: 60px;
 $font-h2: 40px;
 $font-primary-text: 20px;
 $font-description: 18px;
+
+@mixin flexDirection($flex-direction) {
+  display: flex;
+  flex-direction: $flex-direction;
+}
 
 html {
   scroll-behavior: smooth;
@@ -39,4 +44,282 @@ html {
 body {
   background-color: $background-color-dark;
   color: $color-white;
+}
+
+a {
+  color: $color-white;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background: url("./assets/img/bg-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0;
+}
+
+.header__container {
+  @include flexDirection(row);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header__logo {
+  width: 50px;
+  height: 50px;
+}
+
+/*.header__logo-link {
+}*/
+
+.header__icon {
+  display: block;
+  width: 50px;
+  height: 50px;
+  fill: $color-white;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    fill: $color-gold;
+  }
+}
+
+.header__icon.light-theme {
+  display: block;
+  width: 50px;
+  height: 50px;
+  fill: $color-dark;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    fill: $color-gold;
+  }
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav__list {
+  @include flexDirection(row);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.nav__item:nth-child(5) {
+  margin-left: 35px;
+}
+.nav__item:nth-child(4) {
+  margin-left: 32px;
+}
+.nav__item:nth-child(3) {
+  margin-left: 31px;
+}
+.nav__item:nth-child(2) {
+  margin-left: 30px;
+}
+
+.nav__item:first-child {
+  margin-left: 0;
+}
+.nav__item:last-child {
+  margin-right: 37px;
+}
+
+.nav__link {
+  font-family: $font-family-text;
+  line-height: 50px;
+  font-weight: 400;
+  font-size: $font-primary-text;
+  font-style: normal;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  &:hover {
+    color: $color-gold;
+    &:after {
+      width: 100%;
+    }
+  }
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 25px;
+    width: 0%;
+    height: 2px;
+    background-color: $color-gold;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:focus:after {
+    width: 100%;
+  }
+}
+
+.nav__link.light-theme {
+  &:hover {
+    color: $color-white;
+  }
+  &:after {
+    background-color: $color-white;
+  }
+}
+
+.toggle {
+  display: block;
+  margin-right: 36px;
+}
+
+.toggle__link,
+.toggle__slash {
+  font-family: $font-family-text;
+  line-height: 50px;
+  font-weight: 700;
+  font-size: $font-primary-text;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.toggle__link:first-child {
+  margin-right: 13px;
+}
+
+.toggle__link:last-child {
+  margin-left: 11px;
+}
+
+.toggle__link:hover {
+  color: $color-gold;
+}
+
+.toggle .active {
+  color: $color-gold;
+}
+
+.toggle .light-theme {
+  color: $color-dark;
+}
+
+.toggle.light-theme .active {
+  color: $color-white;
+}
+
+.theme {
+  background-image: url("./assets/svg/sun.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  transition: all 1s ease;
+  cursor: pointer;
+  &:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg)
+      brightness(92%) contrast(87%);
+  }
+}
+
+.theme.light-theme {
+  background-image: url("./assets/svg/moon.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  transition: all 1s ease;
+  &:hover {
+    filter: invert(77%) sepia(7%) saturate(1374%) hue-rotate(7deg)
+      brightness(92%) contrast(84%);
+  }
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  user-select: none;
+  margin-right: 44px;
+  margin-left: 20px;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.burger-menu.light-theme {
+  margin-left: 30px;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background: $color-white;
+  margin-bottom: 11px;
+  z-index: 15;
+  transition: all 0.3s ease-in-out;
+}
+
+.line.light-theme {
+  background: $color-dark;
+}
+
+.line1 {
+  margin-top: 11px;
+}
+
+.burger-menu.open {
+  animation: smallbig 0.6s forwards;
+}
+
+@keyframes smallbig {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+.burger-menu.open .line1,
+.burger-menu.open .line2,
+.burger-menu.open .line3 {
+  -webkit-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.burger-menu.open .line2 {
+  opacity: 0;
+}
+
+.burger-menu.open .line1 {
+  -webkit-transform: translateY(13px) rotate(45deg);
+  -ms-transform: translateY(13px) rotate(45deg);
+  -o-transform: translateY(13px) rotate(45deg);
+  transform: translateY(13px) rotate(45deg);
+}
+
+.burger-menu.open .line3 {
+  -webkit-transform: translateY(-13px) rotate(-45deg);
+  -ms-transform: translateY(-13px) rotate(-45deg);
+  -o-transform: translateY(-13px) rotate(-45deg);
+  transform: translateY(-13px) rotate(-45deg);
 }

@@ -13,7 +13,52 @@
     />
   </head>
   <body>
-    <header class="header"></header>
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__logo">
+          <a href="#!" class="header__logo-link">
+            <svg class="header__icon">
+              <use xlink:href="./assets/svg/sprite.svg#logo 1"></use>
+            </svg>
+          </a>
+        </div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#skills" class="nav__link" data-i18="skills">Skills</a>
+            </li>
+            <li class="nav__item">
+              <a href="#portfolio" class="nav__link" data-i18="portfolio"
+                >Portfolio</a
+              >
+            </li>
+            <li class="nav__item">
+              <a href="#video" class="nav__link" data-i18="video">Video</a>
+            </li>
+            <li class="nav__item">
+              <a href="#price" class="nav__link" data-i18="price">Price</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contacts" class="nav__link" data-i18="contacts"
+                >Contacts</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="toggle">
+          <span class="toggle__link en">en</span
+          ><span class="toggle__slash">/</span
+          ><span class="toggle__link ru">ru</span>
+        </div>
+        <div class="theme"></div>
+        <div class="burger-menu">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+          <div class="line line3"></div>
+        </div>
+        <div class="backdrop"></div>
+      </div>
+    </header>
     <main class="main"></main>
     <footer class="footer"></footer>
     <script src="./index.js"></script>

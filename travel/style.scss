@@ -13,3 +13,94 @@ $color-button: #0d606f;
 $color-text-primary: #ffffff;
 $color-text-secondary: #f2785c;
 $color-social-icons: #f8f8f8;
+
+@mixin flexDirection($flex-direction, $flex-wrap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin fontText($font-family, $font-size, $line-height, $font-weight) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  background: rgba(242, 120, 92, 0.7);
+  box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+}
+
+.header__container {
+  @include flexDirection(row, wrap);
+  padding: 25px 120px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo-block {
+  @include flexDirection(row, wrap);
+  gap: 6px;
+}
+
+.header__logo-image {
+  width: 30px;
+  height: 30px;
+  fill: $color-text-primary;
+}
+
+.header__logo-text {
+  @include fontText($font-family-logo, 32px, 39px, 600);
+  color: $color-text-primary;
+}
+
+.nav {
+}
+
+.nav__list {
+  @include flexDirection(row, wrap);
+  gap: 42px;
+}
+
+.nav__item {
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.5s all ease-in-out;
+    color: $color-social-icons;
+  }
+}
+
+.nav__link {
+  @include fontText($font-family-text, 16px, 21px, 500);
+  color: $color-text-primary;
+
+  &:last-child {
+    margin-right: 38px;
+  }
+}
+
+.header__login-block {
+  // width: 103px;
+  // height: 41px;
+}
+
+.header__login-text {
+  @include fontText($font-family-text, 16px, 21px, 500);
+  color: $color-text-primary;
+  padding: 10px 30px;
+  background-color: $color-button;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+}

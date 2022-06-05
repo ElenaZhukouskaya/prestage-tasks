@@ -32,6 +32,10 @@ html {
   font-size: 10px;
 }
 
+body {
+  background-color: $color-text-primary;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -43,6 +47,11 @@ html {
   background-color: $color-button;
   border: none;
   cursor: pointer;
+}
+
+.section-title {
+  @include fontText($font-family-text, 40px, 53px, 500);
+  color: $color-text-secondary;
 }
 
 .header {
@@ -158,4 +167,49 @@ html {
   box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08),
     0px 2px 3px rgba(13, 96, 111, 0.16);
   border-radius: 10px;
+}
+
+.three-steps {
+  @include flexDirection(column, wrap);
+  padding: 80px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.three-steps__title {
+  margin-bottom: 40px;
+}
+
+.three-steps__list {
+  width: 100%;
+  @include flexDirection(row, wrap);
+  justify-content: space-between;
+}
+
+.three-steps__item {
+  background-position: center top;
+}
+
+.three-steps__item:nth-child(1) {
+  background-image: url('./assets/images/svg/velo.svg');
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+}
+
+.three-steps__item:nth-child(2) {
+  background-image: url('./assets/images/svg/date.svg');
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+}
+
+.three-steps__item:nth-child(3) {
+  background-image: url('./assets/images/svg/plane.svg');
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+}
+
+.three-steps__text {
+  @include fontText($font-family-title, 20px, 24px, 400);
+  color: $color-button;
+  margin-top: 130px;
 }

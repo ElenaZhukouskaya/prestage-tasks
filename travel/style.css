@@ -12,6 +12,10 @@ html {
   font-size: 10px;
 }
 
+body {
+  background-color: #ffffff;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -26,6 +30,14 @@ html {
   background-color: #0d606f;
   border: none;
   cursor: pointer;
+}
+
+.section-title {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 40px;
+  line-height: 53px;
+  font-weight: 500;
+  color: #f2785c;
 }
 
 .header__container {
@@ -188,5 +200,73 @@ html {
   -webkit-box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
           box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
   border-radius: 10px;
+}
+
+.three-steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.three-steps__title {
+  margin-bottom: 40px;
+}
+
+.three-steps__list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.three-steps__item {
+  background-position: center top;
+}
+
+.three-steps__item:nth-child(1) {
+  background-image: url("./assets/images/svg/velo.svg");
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+}
+
+.three-steps__item:nth-child(2) {
+  background-image: url("./assets/images/svg/date.svg");
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+}
+
+.three-steps__item:nth-child(3) {
+  background-image: url("./assets/images/svg/plane.svg");
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+}
+
+.three-steps__text {
+  font-family: "Aleo", serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #0d606f;
+  margin-top: 130px;
 }
 /*# sourceMappingURL=style.css.map */

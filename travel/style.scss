@@ -291,3 +291,71 @@ body {
   height: 22.5px;
   margin-right: 10px;
 }
+
+.stories {
+  @include flexDirection(column, wrap);
+  padding: 40px 0px 50px 0px;
+  align-items: center;
+  // margin: 0 auto;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.stories__title {
+  margin-bottom: 40px;
+}
+
+.stories__container {
+  @include flexDirection(column, wrap);
+  background-image: url('./assets/images/png/stories.png'),
+    url('./assets/images/png/bg.png');
+  background-blend-mode: overlay;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 1270px;
+  align-items: center;
+  gap: 40px;
+}
+
+.stories__images-container {
+  @include flexDirection(column, wrap);
+  padding: 30px 120px 0 120px;
+  gap: 30px;
+}
+
+.story__container {
+  @include flexDirection(row, no-wrap);
+  gap: 40px;
+  height: 250px;
+}
+
+.story__description {
+  @include flexDirection(column, wrap);
+  gap: 24px;
+  width: 760px;
+}
+
+.story__title {
+  @include fontText($font-family-title, 35px, 42px, 400);
+  color: $color-button;
+}
+
+.story__describe {
+  @include fontText($font-family-title, 20px, 24px, 400);
+  color: $color-button;
+}
+
+.story__btn {
+  width: 228px;
+  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08),
+    0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  padding: 13.5px 31px;
+  display: flex;
+  align-items: center;
+}
+
+.story__btn-img {
+  width: 40px;
+  height: 22.5px;
+  margin-right: 10px;
+}

@@ -307,7 +307,7 @@ body {
   gap: 60px;
   height: 800px;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   margin-bottom: 26px;
 }
 
@@ -394,7 +394,7 @@ body {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 40px 0px 50px 0px;
+  padding: 40px 0px 0px 0px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -424,6 +424,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 40px;
+  position: relative;
 }
 
 .stories__images-container {
@@ -502,5 +503,60 @@ body {
   width: 40px;
   height: 22.5px;
   margin-right: 10px;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  top: 3710px;
+  background: rgba(255, 255, 255, 0);
+  z-index: 10;
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  padding: 13.35px 121px 13.35px 590px;
+  gap: 328px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__text {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.footer__social-icons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  gap: 20px;
+}
+
+.footer__social-icon {
+  width: 33.65px;
+  height: 33.65px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
